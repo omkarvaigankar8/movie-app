@@ -104,54 +104,58 @@ function Details({}) {
   return (
     <>
       {loading && <Loader loading={loading} />}
-      <Header />
-
-      <div className="custom-container-details my-5">
-        <div className="row">
-          <div className="col-sm-12 col-lg-3  col-md-3 text-center mb-4">
-            <img
-              src={
-                details.poster_path
-                  ? posterImage + details.poster_path
-                  : "https://www.indiaspora.org/wp-content/uploads/2018/10/image-not-available.jpg"
-              }
-              className="img-fluid poster-img"
-            />
-          </div>
-          <div className="col-sm-12  col-lg-9  col-md-9 ps-5 details-box">
-            <div className="d-flex justify-content-between align-items-center mb-4">
-              <div className="movie-title heading-section ">
-                <h1>{details.title}</h1>
+      {!showModal ? (
+        <>
+          <Header />
+          <div className="custom-container-details my-5">
+            <div className="row">
+              <div className="col-sm-12 col-lg-3  col-md-3 text-center mb-4">
+                <img
+                  src={
+                    details.poster_path
+                      ? posterImage + details.poster_path
+                      : "https://www.indiaspora.org/wp-content/uploads/2018/10/image-not-available.jpg"
+                  }
+                  className="img-fluid poster-img"
+                />
               </div>
-              <span className="d-flex justify-content-center align-items-center">
-                <img className="star-icon icons" src={star} />
-                {details.vote_average}
-              </span>
-            </div>
-            <div className="movie-overview mb-4">
-              <p>{details.overview}</p>
-            </div>
-            <div className="runtime mb-4">
-              <h4>Duration</h4>
-              <p>{details.runtime} minutes</p>
-            </div>
-            <div className="actors-section mb-4">
-              <h4 className="mb-2">Starring</h4>
-              <div className="actor-cast d-flex">{actors}</div>
-            </div>
+              <div className="col-sm-12  col-lg-9  col-md-9 ps-5 details-box">
+                <div className="d-flex justify-content-between align-items-center mb-4">
+                  <div className="movie-title heading-section ">
+                    <h1>{details.title}</h1>
+                  </div>
+                  <span className="d-flex justify-content-center align-items-center">
+                    <img className="star-icon icons" src={star} />
+                    {details.vote_average}
+                  </span>
+                </div>
+                <div className="movie-overview mb-4">
+                  <p>{details.overview}</p>
+                </div>
+                <div className="runtime mb-4">
+                  <h4>Duration</h4>
+                  <p>{details.runtime} minutes</p>
+                </div>
+                <div className="actors-section mb-4">
+                  <h4 className="mb-2">Starring</h4>
+                  <div className="actor-cast d-flex">{actors}</div>
+                </div>
 
-            <button
-              className={`btn button ${setDisabled(details.poster_path)}`}
-              onClick={watchTrailer}
-            >
-              <span className="span-btn">
-                Watch Trailer <img src={youtubeIcon} className="youtubeIcon" />
-              </span>
-            </button>
+                <button
+                  className={`btn button ${setDisabled(details.poster_path)}`}
+                  onClick={watchTrailer}
+                >
+                  <span className="span-btn">
+                    Watch Trailer{" "}
+                    <img src={youtubeIcon} className="youtubeIcon" />
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      {showModal && (
+          <Carousel movies={similar} />
+        </>
+      ) : (
         <div
           className="backdrop"
           onClick={() => {
@@ -170,7 +174,6 @@ function Details({}) {
           </div>
         </div>
       )}
-      <Carousel movies={similar} />
     </>
   );
 }
