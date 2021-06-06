@@ -1,0 +1,11 @@
+.img-logo {
+  width: 100px;
+  margin-top: -5px;
+  margin-left: -10px;
+}
+.header-nav {
+  background-color: var(--headerBg);
+}
+.logo-link {
+  color: var(--fontColor);
+}

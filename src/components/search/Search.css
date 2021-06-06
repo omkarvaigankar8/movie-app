@@ -1,0 +1,34 @@
+.hero-background {
+  background: linear-gradient(
+      to bottom,
+      rgba(23, 29, 34, 0.1),
+      rgba(23, 29, 34, 1)
+    ),
+    url("../../Images/hero-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 60vh;
+}
+.hero-text {
+  font-family: "Kaushan Script", cursive;
+  font-size: 34px;
+  width: 70vh;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fffafa;
+  outline: none;
+}
+.search-input:focus,
+.search-input:active,
+.search-input:hover {
+  background-color: transparent;
+  color: var(--fontColor);
+  outline: none;
+}
+.form-control {
+  color: var(--fontColor);
+}

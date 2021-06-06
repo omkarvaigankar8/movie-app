@@ -1,0 +1,40 @@
+.movie-card {
+  width: 300px;
+  border-radius: 3px;
+  box-shadow: -20px 13px 76px -3px rgba(23, 29, 34, 0.88);
+  -webkit-box-shadow: -20px 13px 76px -3px rgba(23, 29, 34, 0.88);
+  -moz-box-shadow: -20px 13px 76px -3px rgba(23, 29, 34, 0.88);
+  margin: 1rem;
+  overflow: hidden;
+}
+
+.movie-info {
+  padding: 1rem;
+  letter-spacing: 0.5px;
+}
+.poster-img {
+  min-height: 414px;
+  border-radius: 30px;
+  box-shadow: 9px 7px 9px 1px #000;
+  max-height: 500px;
+  max-width: 500px;
+}
+.poster-img img {
+  object-fit: contain;
+}
+.movie-info h5 {
+  margin: 0px;
+  color: #fff;
+  font-size: 14px;
+}
+.movie-info span {
+  color: #fff;
+  padding: 0.5rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+.star-icon {
+  width: 20px;
+  margin-right: 5px;
+  margin-top: -5px;
+}

@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+:root {
+  --bodyBg: #171d22;
+  --fontColor: #fcfefe;
+  --headerBg: #151b20;
+  --sliderArrow: #f9f9f9;
+  --filterBtn: #55292d;
+  --btn: #e7684e;
+}
+body {
+  background-color: var(--bodyBg);
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--fontColor);
+  font-family: "Poppins", sans-serif;
+}
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+h4 {
+  font-size: 24px;
+  font-weight: bold;
+}
+h6 {
+  font-size: 18px;
+}
+.custom-container {
+  width: calc(100% - 5%);
+  margin: auto;
+}
+
+@media (max-width: 1200px) {
+  p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  h6 {
+    font-size: 15px;
+  }
+  p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 24px;
+  }
+  h4 {
+    font-size: 16px;
+  }
+  h6 {
+    font-size: 13px;
+  }
+  p {
+    font-size: 12px;
+  }
+}

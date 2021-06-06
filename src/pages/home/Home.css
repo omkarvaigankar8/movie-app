@@ -1,0 +1,23 @@
+.section-listing {
+  margin-top: 50px;
+  padding-bottom: 30px;
+}
+.form-select {
+  width: inherit;
+  background-color: var(--btn);
+  color: var(--fontColor);
+  border: none;
+  background-image: url("../../Images/settings-icon.svg");
+  background-size: 23px 18px;
+}
+option {
+  background-color: var(--fontColor);
+  color: var(--bodyBg);
+  border: none;
+}
+
+@media (max-width: 480px) {
+  .form-select {
+    font-size: 12px;
+  }
+}
