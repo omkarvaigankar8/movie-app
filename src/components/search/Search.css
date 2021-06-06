@@ -37,7 +37,6 @@
   background-color: transparent;
   color: var(--fontColor);
   outline: none;
-  border-color: var(--bodyBg) !important;
 }
 .form-control {
   color: var(--fontColor);
