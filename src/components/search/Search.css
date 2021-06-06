@@ -15,12 +15,21 @@
   font-size: 34px;
   width: 70vh;
 }
-
+.form-select {
+  cursor: pointer;
+}
+.form-select:focus {
+  border-color: transparent;
+  outline: 0;
+  box-shadow: none;
+  border: none;
+}
 .search-input {
   background: transparent;
   border: none;
   border-bottom: 2px solid #fffafa;
   outline: none;
+  cursor: pointer;
 }
 .search-input:focus,
 .search-input:active,
@@ -28,6 +37,7 @@
   background-color: transparent;
   color: var(--fontColor);
   outline: none;
+  border-color: var(--bodyBg) !important;
 }
 .form-control {
   color: var(--fontColor);

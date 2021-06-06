@@ -6,6 +6,7 @@
   -moz-box-shadow: -20px 13px 76px -3px rgba(23, 29, 34, 0.88);
   margin: 1rem;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .movie-info {
