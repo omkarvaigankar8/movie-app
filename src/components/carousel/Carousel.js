@@ -10,10 +10,8 @@ const Poster_Link = "https://image.tmdb.org/t/p/w300";
 
 const Carousel = (props) => {
   const slides = [];
-  console.log(props, "from Carousel : PROPS");
   const history = useHistory();
   const redirectHandler = (id) => {
-    console.log("JAM Carousel", id);
     history.push({
       pathname: "/movie",
       state: { id },
@@ -52,11 +50,6 @@ const Carousel = (props) => {
         spaceBetween={20}
         slidesPerView={8}
         loop={true}
-        onInit={(swiper) => console.log("Swiper initialization")}
-        onSlideChange={(swiper) =>
-          console.log("Slide Change to :", swiper.activeIndex)
-        }
-        onReachEnd={(swiper) => console.log("End reached")}
         id="main"
       >
         {props.movies.length !== 0 &&
@@ -65,7 +58,11 @@ const Carousel = (props) => {
             <SwiperSlide key={movie.id} tag="li">
               <img
                 className="img-fluid carousel-img"
-                src={Poster_Link + movie.poster_path}
+                src={
+                  movie.poster_path
+                    ? Poster_Link + movie.poster_path
+                    : "https://www.indiaspora.org/wp-content/uploads/2018/10/image-not-available.jpg"
+                }
                 alt={movie.title}
                 onClick={() => redirectHandler(movie && movie.id)}
               />

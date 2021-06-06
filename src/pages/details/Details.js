@@ -16,7 +16,6 @@ function Details({}) {
   const location = useLocation();
 
   const myparam = location.state;
-  console.log("useLocation", myparam);
 
   const getDetails = `https://api.themoviedb.org/3/movie/${myparam.id}?api_key=9feb28ca7a3b56eb25653dabf22373a9&language=en-US`;
   const getSimilar = `https://api.themoviedb.org/3/movie/${myparam.id}/similar?api_key=9feb28ca7a3b56eb25653dabf22373a9&language=en-US&page=1`;
@@ -37,7 +36,6 @@ function Details({}) {
       .then((res) => res.json())
       .then((data) => {
         setDetails(data);
-        console.log(data, "details");
       });
 
     // Casts
@@ -45,19 +43,17 @@ function Details({}) {
       .then((res) => res.json())
       .then((data) => {
         setCast(data.cast);
-
-        console.log(data.cast);
       });
 
     // Similar Movies
-
-    console.log("Use Effect Called");
     fetch(getSimilar)
       .then((res) => res.json())
       .then((data) => {
         setSimilar(data.results);
       });
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   }, [myparam && myparam.id]);
 
   // Youtube Trailer
@@ -67,10 +63,6 @@ function Details({}) {
       .then((data) => {
         setVideoURL(youTubeVideoURL + data.results[0].key);
         openModal();
-        console.log(
-          "Video Playing : results",
-          youTubeVideoURL + data.results[0].key
-        );
       });
   };
   const openModal = () => {
@@ -89,7 +81,6 @@ function Details({}) {
             {actor.name}
           </h6>
         );
-        console.log(actor.name, "Actors");
       });
 
   // disabled button

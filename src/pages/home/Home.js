@@ -23,20 +23,17 @@ const MovieList = () => {
       .then((res) => res.json())
       .then((data) => {
         setMovies(data.results);
-
-        console.log(data.results, "Movie Data");
       });
-
     //  Carousel now Playing
     fetch(nowPlaying)
       .then((res) => res.json())
       .then((data) => {
         setMoviesNow(data.results);
-        console.log(data.results, "CArosusel");
       });
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   }, [movieType]);
-
   return (
     <div className="container-fluid">
       {loading && <Loader loading={loading} />}
